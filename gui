@@ -36,9 +36,18 @@ TextBox:UpdateBox("New Title")
 print(arg)
 end)
 
-Page:CreateSlider("WalkSpeed", 16, 100,function(value)
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Page:CreateSlider("WalkSpeed", 16, 100,function(arg)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = arg
+   end
+end)
+
+Page:CreateSlider("JumpPower", 16, 100,function(arg)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = arg
+   end
 end)
 
 Label = Page:CreateLabel("Label")
+Label:UpdateLabel("🥋 Metatron On Top 👑")
+
+Label = Player:CreateLabel("Informaçoes")
 Label:UpdateLabel("🥋 Metatron On Top 👑")
