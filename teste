@@ -6,7 +6,10 @@ local Page = Tab:CreateFrame("Main")
 Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("Title", "Description", function(value)
 if value == true then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/SytemBroker-ByMetatron"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/SytemBroker-ByMetatron"))()
+else
+print(false)
+end
 end)
 end)
 
