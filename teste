@@ -2,7 +2,7 @@ local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Met
 local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
 local Tab = Window:CreateTab("Menu")
 local Page = Tab:CreateFrame("Main")
-local Page1 = Tab:CreateFrame("Player")
+local player = Tab:CreateFrame("Player")
 
 Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("Title", "Description", function(value)
@@ -14,14 +14,9 @@ end
 end)
 end)
 
-Toggle = Page1:CreateToggle("Speed Off", "Aumente sua velocidade", function(arg)
-Toggle:UpdateToggle("Speed On", "Sua velocidade fui mudada para 100")
-walkspeed = true
-while wait() do
-if walkspeed then
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50 --change this for different walkspeed
-else
-end
+Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
+Toggle:UpdateToggle("New Title", "New Description")
+print(arg)
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
@@ -35,8 +30,10 @@ print(arg)
 end)
 
 Page:CreateSlider("Slider", 16, 100,function(arg)
-   print(arg)
+   ValueName = "WS",
+   Callback = function(Value)
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 end)
 
-Label = Page:CreateLabel("By Metatron")
-Label:UpdateLabel("Metatron On Top")
+Label = Page:CreateLabel("Label")
+Label:UpdateLabel("🥋 Metatron On Top 👑")
