@@ -3589,6 +3589,6 @@ task.spawn(function()
 	end
 end)
 
-SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
-setclipboard("https://discord.gg/RkhpySwNR9")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/premium"))() -- load the premium
+SendNotify("System Broken","Gui developed by MetatronXHub - Discord in your clipboard",10)
+setclipboard("https://discord.gg/eR2KEZFM")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/premium"))() -- load the premium
