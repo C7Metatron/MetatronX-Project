@@ -1,75 +1,181 @@
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
-local win = DiscordLib:Window("discord library")
+local Main = library:CreateWindow("Main","Crimson")
 
-local serv = win:Server("Preview", "")
+local tab = Main:CreateTab("Cheats")
+local tab2 = Main:CreateTab("Misc")
 
-local btns = serv:Channel("Buttons")
-
-btns:Button("Kill all", function()
-DiscordLib:Notification("Notification", "Killed everyone!", "Okay!")
+tab:CreateButton("Hi",function()
+print("clicked")
 end)
 
-btns:Seperator()
-
-btns:Button("Get max level", function()
-DiscordLib:Notification("Notification", "Max level!", "Okay!")
+tab:CreateToggle("Farm",function(a)
+print(a)
 end)
 
-local tgls = serv:Channel("Toggles")
-
-tgls:Toggle("Auto-Farm",false, function(bool)
-print(bool)
+tab:CreateSlider("Wow",1,16,function(a)
+print(a)
 end)
 
-local sldrs = serv:Channel("Sliders")
-
-local sldr = sldrs:Slider("Slide me!", 0, 1000, 400, function(t)
-print(t)
+tab:CreateCheckbox("Aimbot",function(a)
+print(a)
 end)
 
-sldrs:Button("Change to 50", function()
-sldr:Change(50)
+tab:CreateDropdown("Word",{"Sung","Jin","Woo"},function(a)
+print(a)
 end)
 
-local drops = serv:Channel("Dropdowns")
-
-
-local drop = drops:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
-print(bool)
+tab2:CreateButton("Hello",function()
+print("clicked")
 end)
 
-drops:Button("Clear", function()
-drop:Clear()
+tab:Show()
+
+----documentation 
+[[
+library:CreateWindow(name,theme)
+window:CreateTab(name)
+tab:CreateButton(text,callback)
+tab:CreateToggle(text,callback)
+toggle:Set(state)
+tab:CreateDropdown(text,list,callback)
+tab:CreateSlider(text,minvalue,maxvalue,callback)
+tab:CreateCheat(text,callback)
+tab:Show()
+]]
+
+---vanis
+
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Metatron/UI-Librarys/main/Vanis%20Library'))()
+
+local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
+
+local Tab = Window:CreateTab("Menu")
+
+local Page = Tab:CreateFrame("Main")
+
+Button = Page:CreateButton("Button", "Description", function()
+CreateNotification("Title", "Description", function(value)
+if value == true then
+   local flying = true
+   local deb = true
+   local ctrl = {f = 0, b = 0, l = 0, r = 0}
+   local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+   local KeyDownFunction = nil
+   local KeyUpFunction = nil
+   Fly_Button.MouseButton1Click:Connect(function()
+      ChangeToggleColor(Fly_Button)
+      if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
+         flying = true
+         if game:GetService("UserInputService").TouchEnabled then
+            Fly_Pad.Visible = true
+         end
+         local UpperTorso = plr.Character.UpperTorso
+         local speed = 0
+         local function Fly()
+            local bg = Instance.new("BodyGyro", UpperTorso)
+            bg.P = 9e4
+            bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+            bg.cframe = UpperTorso.CFrame
+            local bv = Instance.new("BodyVelocity", UpperTorso)
+            bv.velocity = Vector3.new(0,0.1,0)
+            bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+            PlayAnim(10714347256,4,0)
+            repeat task.wait()
+               plr.Character.Humanoid.PlatformStand = true
+               if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+                  speed = speed+FlySpeed*0.10
+                  if speed > FlySpeed then
+                     speed = FlySpeed
+                  end
+               elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+                  speed = speed-FlySpeed*0.10
+                  if speed < 0 then
+                     speed = 0
+                  end
+               end
+               if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+                  bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+                  lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+               elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+                  bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+               else
+                  bv.velocity = Vector3.new(0,0.1,0)
+               end
+               bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/FlySpeed),0,0)
+            until not flying
+            ctrl = {f = 0, b = 0, l = 0, r = 0}
+            lastctrl = {f = 0, b = 0, l = 0, r = 0}
+            speed = 0
+            bg:Destroy()
+            bv:Destroy()
+            plr.Character.Humanoid.PlatformStand = false
+         end
+   
+         KeyDownFunction = mouse.KeyDown:connect(function(key)
+            if key:lower() == "w" then
+               ctrl.f = 1
+               PlayAnim(10714177846,4.65,0)
+            elseif key:lower() == "s" then
+               ctrl.b = -1
+               PlayAnim(10147823318,4.11,0)
+            elseif key:lower() == "a" then
+               ctrl.l = -1
+               PlayAnim(10147823318,3.55,0)
+            elseif key:lower() == "d" then
+               ctrl.r = 1
+               PlayAnim(10147823318,4.81,0)
+            end
+         end)
+   
+         KeyUpFunction = mouse.KeyUp:connect(function(key)
+            if key:lower() == "w" then
+               ctrl.f = 0
+               PlayAnim(10714347256,4,0)
+            elseif key:lower() == "s" then
+               ctrl.b = 0
+               PlayAnim(10714347256,4,0)
+            elseif key:lower() == "a" then
+               ctrl.l = 0
+               PlayAnim(10714347256,4,0)
+            elseif key:lower() == "d" then
+               ctrl.r = 0
+               PlayAnim(10714347256,4,0)
+            end
+         end)
+         Fly()
+      else
+         flying = false
+         Fly_Pad.Visible = false
+         KeyDownFunction:Disconnect()
+         KeyUpFunction:Disconnect()
+         StopAnim()
+      end
+   end)
+else
+print(false)
+end
+end)
 end)
 
-drops:Button("Add option", function()
-drop:Add("Option")
+Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
+Toggle:UpdateToggle("New Title", "New Description")
+print(arg)
 end)
 
-local clrs = serv:Channel("Colorpickers")
-
-clrs:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
-print(t)
+Bind = Page:CreateBind("KeyBind", "F", function(arg)
+Bind:UpdateBind("New Title")
+print(arg)
 end)
 
-local textbs = serv:Channel("Textboxes")
-
-textbs:Textbox("Gun power", "Type here!", true, function(t)
-print(t)
+TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
+TextBox:UpdateBox("New Title")
+print(arg)
 end)
 
-local lbls = serv:Channel("Labels")
-
-lbls:Label("This is just a label.")
-
-local bnds = serv:Channel("Binds")
-
-bnds:Bind("Kill bind", Enum.KeyCode.RightShift, function()
-print("Killed everyone!")
+Page:CreateSlider("Slider", 16, 500,function(arg)
+   print(arg)
 end)
 
-serv:Channel("by dawid#7205")
-
-
-win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
+Label = Page:CreateLabel("Label")
+Label:UpdateLabel("New Title")
