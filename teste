@@ -2,40 +2,32 @@ local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Met
 local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
 local Tab = Window:CreateTab("Menu")
 local Page = Tab:CreateFrame("Main")
+
 Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("Title", "Description", function(value)
 if value == true then
-ZombieClassicAnim_Button.MouseButton1Click:Connect(function()
-	local Animate = plr.Character.Animate
-	Animate.Disabled = true
-	StopAnim()
-	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616158929"
-	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616160636"
-	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
-	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
-	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
-	plr.Character.Humanoid:ChangeState(3)
-	Animate.Disabled = false
-end)
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/SytemBroker-ByMetatron"))()
 end)
 end)
+
 Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
 Toggle:UpdateToggle("New Title", "New Description")
 print(arg)
 end)
+
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
 Bind:UpdateBind("New Title")
 print(arg)
 end)
+
 TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
 TextBox:UpdateBox("New Title")
 print(arg)
 end)
+
 Page:CreateSlider("Slider", 16, 500,function(arg)
    print(arg)
 end)
+
 Label = Page:CreateLabel("Label")
 Label:UpdateLabel("New Title")
