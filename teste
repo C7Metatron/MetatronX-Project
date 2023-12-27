@@ -1,44 +1,75 @@
-local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/jakepscripts/moonlib/main/moonlibv1.lua'))() 
-local main = library:CreateWindow("MoonLIB", "#19cf83", 9160626035)
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-main:CreateTab("Home") 
-main:CreateTab("Tab")
+local win = DiscordLib:Window("discord library")
 
--- // home tab
-main:CreateLabel("Label", "Home")
+local serv = win:Server("Preview", "")
 
-main:CreateToggle("Toggle", "Home", function(togglestate)
-    print(togglestate)
+local btns = serv:Channel("Buttons")
+
+btns:Button("Kill all", function()
+DiscordLib:Notification("Notification", "Killed everyone!", "Okay!")
 end)
 
+btns:Seperator()
 
-main:CreateButton("Button", "Home", function()
-print('btn')
+btns:Button("Get max level", function()
+DiscordLib:Notification("Notification", "Max level!", "Okay!")
 end)
 
+local tgls = serv:Channel("Toggles")
 
-main:CreateDropdown("Dropdown", "Home", {"Oranges", "Apples", "Grapes", "Cherrys"}, function(arg)
-    print(arg)
- 
+tgls:Toggle("Auto-Farm",false, function(bool)
+print(bool)
 end)
 
+local sldrs = serv:Channel("Sliders")
 
-main:CreateSlider("Slider", "Home", 0, 100, function(sliderval)
-print(sliderval)
+local sldr = sldrs:Slider("Slide me!", 0, 1000, 400, function(t)
+print(t)
 end)
 
-main:CreateLabel("another label", "Home")
-
-main:CreateButton("button again", "Home", function()
-print('btn')
+sldrs:Button("Change to 50", function()
+sldr:Change(50)
 end)
 
--- // the tab's taba
+local drops = serv:Channel("Dropdowns")
 
-main:CreateButton("another button", "Tab", function()
-print('btn')
+
+local drop = drops:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+print(bool)
 end)
 
-main:CreateToggle("another toggle", "Tab", function(togglestate)
-    print(togglestate)
+drops:Button("Clear", function()
+drop:Clear()
 end)
+
+drops:Button("Add option", function()
+drop:Add("Option")
+end)
+
+local clrs = serv:Channel("Colorpickers")
+
+clrs:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
+print(t)
+end)
+
+local textbs = serv:Channel("Textboxes")
+
+textbs:Textbox("Gun power", "Type here!", true, function(t)
+print(t)
+end)
+
+local lbls = serv:Channel("Labels")
+
+lbls:Label("This is just a label.")
+
+local bnds = serv:Channel("Binds")
+
+bnds:Bind("Kill bind", Enum.KeyCode.RightShift, function()
+print("Killed everyone!")
+end)
+
+serv:Channel("by dawid#7205")
+
+
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
