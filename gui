@@ -14,9 +14,16 @@ end
 end)
 end)
 
-Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
-Toggle:UpdateToggle("New Title", "New Description")
-print(arg)
+Toggle = Page:CreateToggle("Animacao Off", "animacao zombie esta Off", function(arg)
+Toggle:UpdateToggle("Animaçao On", "Reset Para Remover")
+zombie = game:GetService("RunService").Stepped:Connect(function ()
+   game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921344533"
+   game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921345304"
+   game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+   game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921351278"
+   game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
+   game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921343576"
+   end)
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
@@ -29,7 +36,7 @@ TextBox:UpdateBox("New Title")
 print(arg)
 end)
 
-Page:CreateSlider("WalkSpeed", 16, 100,function(arg)
+Page:CreateSlider("WalkSpeed", 16, 100,function(value)
        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 end)
 
