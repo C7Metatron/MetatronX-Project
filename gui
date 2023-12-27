@@ -3,9 +3,10 @@ local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
 local Tab = Window:CreateTab("Menu")
 local Page = Tab:CreateFrame("Main")
 local player = Tab:CreateFrame("Player")
+CreateNotification("MetatronX", "Teste", function(value)
 
 Button = Page:CreateButton("Button", "Description", function()
-CreateNotification("Title", "Description", function(value)
+CreateNotification("MetatronX", "Teste", function(value)
 if value == true then
 print(true)
 else
@@ -41,13 +42,5 @@ Page:CreateSlider("WalkSpeed", 16, 100,function(arg)
    end
 end)
 
-Page:CreateSlider("JumpPower", 16, 100,function(arg)
-   game.Players.LocalPlayer.Character.Humanoid.JumpPower = arg
-   end
-end)
-
 Label = Page:CreateLabel("Label")
-Label:UpdateLabel("🥋 Metatron On Top 👑")
-
-Label = Player:CreateLabel("Informaçoes")
 Label:UpdateLabel("🥋 Metatron On Top 👑")
