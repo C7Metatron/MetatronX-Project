@@ -3,7 +3,6 @@ local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
 local Tab = Window:CreateTab("Menu")
 local Page = Tab:CreateFrame("Main")
 local player = Tab:CreateFrame("Player")
-CreateNotification("MetatronX", "Teste", function(value)
 
 Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("MetatronX", "Teste", function(value)
@@ -17,13 +16,7 @@ end)
 
 Toggle = Page:CreateToggle("Animacao Off", "animacao zombie esta Off", function(arg)
 Toggle:UpdateToggle("Animaçao On", "Reset Para Remover")
-zombie = game:GetService("RunService").Stepped:Connect(function ()
-   game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921344533"
-   game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921345304"
-   game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-   game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921351278"
-   game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
-   game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921343576"
+print("teste")
    end)
 end)
 
@@ -39,7 +32,6 @@ end)
 
 Page:CreateSlider("WalkSpeed", 16, 100,function(arg)
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = arg
-   end
 end)
 
 Label = Page:CreateLabel("Label")
