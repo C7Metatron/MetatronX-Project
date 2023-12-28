@@ -338,8 +338,8 @@ _G.Color = Color3.fromRGB(255, 255, 255)
 _G.Color2 = Color3.fromRGB(1, 1, 1)
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
-local window = library:CreateWindow("Void Hub | Project Slayers", Enum.KeyCode.RightControl)
-local Watermark = library:CreateWatermark("Void Hub | Project Slayers | {fps}")
+local window = library:CreateWindow("MetatronX Hub | Project Slayers", Enum.KeyCode.K)
+local Watermark = library:CreateWatermark("MetatronX Hub | Project Slayers | {fps}")
 
 local Main = window:CreateTab("Main")
 local Farming = Main:CreateSector("Farming", 'left')
