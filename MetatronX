@@ -22,15 +22,13 @@ end
 end)
 end)
 
-Toggle = Page:CreateToggle("Fly", "Ligar", function(value)
-Toggle:UpdateToggle("Fly On", "New Description")
+Button = Page:CreateButton("Fly", "Ligar", function(value)
 notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
 local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
 fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly
 end)
 
-Toggle = Page:CreateToggle("Fly", "Desligar", function(value)
-    Toggle:UpdateToggle("Fly Off", "New Description")
+Button = Page:CreateButton("Fly", "Desligar", function(value)
     notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
     local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
     fly_ThisCanBeNamedAnything(false) -- Change "true" To "false" to disable Fly
