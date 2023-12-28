@@ -686,7 +686,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(3)
+            task.wait(5)
             end
         end)
     end
@@ -1762,7 +1762,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(3)
+            task.wait(5)
             end
         end)
     end
@@ -2659,7 +2659,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(3)
+            task.wait(5)
             end
         end)
     end
@@ -3286,7 +3286,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(3)
+            task.wait(5)
             end
         end)
     end
