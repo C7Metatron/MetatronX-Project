@@ -13,20 +13,32 @@ local Tab = Window:CreateTab("Main")
 local Page = Tab:CreateFrame("Testes")
 
 Button = Page:CreateButton("Button", "Description", function()
-CreateNotification("Metatron On", "Description", function(value)
-local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
-fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly 
+CreateNotification("Title", "Description", function(value)
+if value == true then
+print(true)
+else
+print(false)
+end
 end)
 end)
 
-Toggle = Page:CreateToggle("Fly", "en testes", function(value)
-Toggle:UpdateToggle("Fly On", "Pode ser Detectado!")
+Toggle = Page:CreateToggle("Fly", "Ligar", function(value)
+Toggle:UpdateToggle("Fly On", "New Description")
 notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
+local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
+fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly
 end)
+
+Toggle = Page:CreateToggle("Fly", "Desligar", function(value)
+    Toggle:UpdateToggle("Fly Off", "New Description")
+    notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
+    local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
+    fly_ThisCanBeNamedAnything(false) -- Change "true" To "false" to disable Fly
+    end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
 Bind:UpdateBind("New Title")
-print(true)
+fly_ThisCanBeNamedAnything(false)
 end)
 
 TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
