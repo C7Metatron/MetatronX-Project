@@ -3397,7 +3397,7 @@ Night_Button.MouseButton1Click:Connect(function()
 end)
 
 InfYield_Button.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/infiniteyield%20Modificado'))()
 end)
 
 CMDX_Button.MouseButton1Click:Connect(function()
@@ -3420,7 +3420,7 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("System Broken","Loading free emotes.\nCredits: Gi#7331")
+		SendNotify("System Broken","Loading free emotes.\nCredits: Metatron")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AllEmotes"))()
 	end
 end)
