@@ -16,8 +16,12 @@ Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("Title", "Description", function(value)
 if value == true then
 print(true)
+local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
+fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly
 else
-print(false)
+local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
+notify("Fly Desligado","Initiating","",11310622169,"255, 100, 100")
+fly_ThisCanBeNamedAnything(false) 
 end
 end)
 end)
@@ -27,9 +31,6 @@ Toggle:UpdateToggle("Fly On", "Pode ser Detectado!")
 notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
 local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
 fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly
-else
-notify("Fly Desligado","Initiating","",11310622169,"255, 100, 100")
-fly_ThisCanBeNamedAnything(false) 
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
