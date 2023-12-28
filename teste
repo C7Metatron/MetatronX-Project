@@ -18,17 +18,6 @@ local Page = Tab:CreateFrame("Page 1")
 Button = Page:CreateButton("Button", "Description", function()
 CreateNotification("Title", "Description", function(value)
 if value == true then
-	Animate.Disabled = true
-	StopAnim()
-	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
-	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=782843345"
-	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=782842708"
-	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=782847020"
-	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=782843869"
-	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=782846423"
-	plr.Character.Humanoid:ChangeState(3)
-	Animate.Disabled = false
 print(true)
 else
 print(false)
@@ -36,9 +25,21 @@ end
 end)
 end)
 
-Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+        if killaura then
+            attack(attackMethods[Method])
+            task.wait(2)
+            end
+        end)
+    end
+end)
+
+Toggle = Page:CreateToggle("Toggle", "Description", function(value)
 Toggle:UpdateToggle("New Title", "New Description")
-print(arg)
+notify("Killaura Ligado","Initiating","",11310622169,"255, 100, 100")
+getgenv().killaura = value
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
