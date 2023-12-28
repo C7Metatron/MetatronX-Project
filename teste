@@ -338,7 +338,7 @@ _G.Color = Color3.fromRGB(255, 255, 255)
 _G.Color2 = Color3.fromRGB(1, 1, 1)
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
-local window = library:CreateWindow("MetatronX Hub | Project Slayers", Enum.KeyCode.K)
+local window = library:CreateWindow("MetatronX Hub | Project Slayers", Enum.KeyCode.RightControl)
 local Watermark = library:CreateWatermark("MetatronX Hub | Project Slayers | {fps}")
 local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
 function notify(fuckyou,title,description,icon,color)
@@ -686,7 +686,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(2)
+            task.wait(3)
             end
         end)
     end
@@ -1420,8 +1420,17 @@ _G.Color = Color3.fromRGB(255, 255, 255)
 _G.Color2 = Color3.fromRGB(1, 1, 1)
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
-local window = library:CreateWindow("Void Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
-local Watermark = library:CreateWatermark("Void Hub v2 | Project Slayers | {fps}")
+local window = library:CreateWindow("MetatronX Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
+local Watermark = library:CreateWatermark("MetatronX Hub v2 | Project Slayers | {fps}")
+local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
+function notify(fuckyou,title,description,icon,color)
+    notif:message {
+        Title = fuckyou.." | <font color='rgb(".. color ..")'>"..title.."</font>",
+        Description = description,
+        Icon = icon
+    }
+end
+notify("MetatronX Hub","Initiating","Loading MetatronX Hub!",11310622169,"255, 100, 100")
 
 local Main = window:CreateTab("Main")
 local Farming = Main:CreateSector("Farming", 'left')
@@ -1753,7 +1762,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(2)
+            task.wait(3)
             end
         end)
     end
@@ -2441,8 +2450,17 @@ _G.Color = Color3.fromRGB(255, 255, 255)
 _G.Color2 = Color3.fromRGB(1, 1, 1)
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
-local window = library:CreateWindow("Void Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
-local Watermark = library:CreateWatermark("Void Hub v2 | Project Slayers | {fps}")
+local window = library:CreateWindow("MetatronX Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
+local Watermark = library:CreateWatermark("MetatronX Hub v2 | Project Slayers | {fps}")
+local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
+function notify(fuckyou,title,description,icon,color)
+    notif:message {
+        Title = fuckyou.." | <font color='rgb(".. color ..")'>"..title.."</font>",
+        Description = description,
+        Icon = icon
+    }
+end
+notify("MetatronX Hub","Initiating","Loading MetatronX Hub!",11310622169,"255, 100, 100")
 
 local Main = window:CreateTab("Main")
 local Farming = Main:CreateSector("Farming", 'left')
@@ -2641,7 +2659,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(2)
+            task.wait(3)
             end
         end)
     end
@@ -3127,8 +3145,17 @@ _G.Color = Color3.fromRGB(255, 255, 255)
 _G.Color2 = Color3.fromRGB(1, 1, 1)
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
-local window = library:CreateWindow("Void Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
-local Watermark = library:CreateWatermark("Void Hub v2 | Project Slayers | {fps}")
+local window = library:CreateWindow("MetatronX Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
+local Watermark = library:CreateWatermark("Metatron Hub v2 | Project Slayers | {fps}")
+local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
+function notify(fuckyou,title,description,icon,color)
+    notif:message {
+        Title = fuckyou.." | <font color='rgb(".. color ..")'>"..title.."</font>",
+        Description = description,
+        Icon = icon
+    }
+end
+notify("MetatronX Hub","Initiating","Loading MetatronX Hub!",11310622169,"255, 100, 100")
 
 local Main = window:CreateTab("Main")
 local Farming = Main:CreateSector("Farming", 'left')
@@ -3259,7 +3286,7 @@ task.spawn(function()
         pcall(function()
         if killaura then
             attack(attackMethods[Method])
-            task.wait(2)
+            task.wait(3)
             end
         end)
     end
