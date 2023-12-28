@@ -13,12 +13,9 @@ local Tab = Window:CreateTab("Main")
 local Page = Tab:CreateFrame("Testes")
 
 Button = Page:CreateButton("Button", "Description", function()
-CreateNotification("Title", "Description", function(value)
-if value == true then
-print(true)
+CreateNotification("Metatron On", "Description", function(value)
 local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
 fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly 
-end
 end)
 end)
 
