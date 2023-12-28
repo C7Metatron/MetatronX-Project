@@ -28,10 +28,7 @@ Toggle = Page:CreateToggle("Toggle", "Description", function(value)
 Toggle:UpdateToggle("New Title", "New Description")
 notify("Fly Ligado","Initiating","",11310622169,"255, 100, 100")
 local fly_ThisCanBeNamedAnything = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua"))()
-if value == true then
 fly_ThisCanBeNamedAnything(true) -- Change "true" To "false" to disable Fly
-else
-fly_ThisCanBeNamedAnything(false) 
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
