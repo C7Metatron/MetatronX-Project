@@ -1,9 +1,12 @@
-local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Metatron/UI-Librarys/main/Vanis%20Library'))()
-local Window = library:CreateWindow("MetatronX", "V1", 10044538000)
-local Tab = Window:CreateTab("Menu")
-local Page = Tab:CreateFrame("Main")
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cypherdh/VanisUILIB/main/.gitignore'))()
 
-Button = Page:CreateButton("Animation", "Zombie", function()
+local Window = library:CreateWindow("Name", "Version", 10044538000)
+
+local Tab = Window:CreateTab("Scripts")
+
+local Page = Tab:CreateFrame("Page 1")
+
+Button = Page:CreateButton("Button", "zombie", function()
 CreateNotification("Title", "Description", function(value)
 	local Animate = plr.Character.Animate
 	Animate.Disabled = true
@@ -17,5 +20,50 @@ CreateNotification("Title", "Description", function(value)
 	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
 	plr.Character.Humanoid:ChangeState(3)
 	Animate.Disabled = false
+else
+print(false)
+end
 end)
 end)
+
+Button = Page:CreateButton("Button", "toy", function()
+	CreateNotification("Title", "Description", function(value)
+		local Animate = plr.Character.Animate
+		Animate.Disabled = true
+		StopAnim()
+		Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+		Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=782843345"
+		Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=782842708"
+		Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=782847020"
+		Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=782843869"
+		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=782846423"
+		plr.Character.Humanoid:ChangeState(3)
+		Animate.Disabled = false
+	else
+	print(false)
+	end
+	end)
+	end)
+
+Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
+Toggle:UpdateToggle("New Title", "New Description")
+print(arg)
+end)
+
+Bind = Page:CreateBind("KeyBind", "F", function(arg)
+Bind:UpdateBind("New Title")
+print(arg)
+end)
+
+TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
+TextBox:UpdateBox("New Title")
+print(arg)
+end)
+
+Page:CreateSlider("Slider", 16, 500,function(arg)
+   print(arg)
+end)
+
+Label = Page:CreateLabel("Label")
+Label:UpdateLabel("New Title")
