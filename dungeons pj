@@ -1,0 +1,239 @@
+local function attack(method)
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+end
+
+local attackMethods = {
+    ["Combat"] = 'fist_combat',
+    ["Sword"] = 'Sword_Combat_Slash',
+    ["Scythe"] = 'Scythe_Combat_Slash',
+    ["Claw"] = 'claw_Combat_Slash'
+}
+
+if game.ReplicatedStorage:FindFirstChild("Remotes"):FindFirstChild("getclientping") then 
+    game.ReplicatedStorage:FindFirstChild("Remotes"):FindFirstChild("getclientping").OnClientInvoke = function() 
+        task.wait(5)
+        return true 
+    end 
+end 
+
+
+setfflag("HumanoidParallelRemoveNoPhysics", "False")
+setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+
+
+_G.Color = Color3.fromRGB(255, 255, 255)
+_G.Color2 = Color3.fromRGB(1, 1, 1)
+
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/NZK8HEzF"))()
+local window = library:CreateWindow("MetatronX Hub v2 | Project Slayers", Enum.KeyCode.RightControl)
+local Watermark = library:CreateWatermark("Metatron Hub v2 | Project Slayers | {fps}")
+local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
+function notify(fuckyou,title,description,icon,color)
+    notif:message {
+        Title = fuckyou.." | <font color='rgb(".. color ..")'>"..title.."</font>",
+        Description = description,
+        Icon = icon
+    }
+end
+notify("MetatronX Hub","Initiating","Loading MetatronX Hub!",11310622169,"255, 100, 100")
+
+local Main = window:CreateTab("Main")
+local Farming = Main:CreateSector("Farming", 'left')
+local Settings = Main:CreateSector("Settings", "right")
+--Other
+local Misc1 = window:CreateTab("Misc")
+local Misc = Misc1:CreateSector("Misc", 'left')
+--Credits
+local Cred = window:CreateTab("Credits")
+local Credits = Cred:CreateSector("Credits", 'left')
+
+Credits:AddButton("Join/Copy Discord",function()
+    setclipboard("discord.gg/SHE7PXUT2B")
+    syn.request(
+        {
+            Url = "http://127.0.0.1:6463/rpc?v=1",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json",
+                ["origin"] = "https://discord.com",
+            },
+            Body = game:GetService("HttpService"):JSONEncode(
+                {
+                    ["args"] = {
+                        ["code"] = "SHE7PXUT2B",
+                    },
+                    ["cmd"] = "INVITE_BROWSER",
+                    ["nonce"] = "."
+                })
+        })
+    end)
+
+
+
+--Farming
+
+Farming:AddToggle("Kill Aura", false, function(value)
+    getgenv().killaura = value
+end)
+
+Farming:AddToggle("No Cd Moves - Can Kick", false, function(value)
+    getgenv().NoCdMoves = value
+end)
+
+
+--Settings
+
+getgenv().Method = "Sword"
+Settings:AddDropdown("Kill Aura Method", {"Scythe","Sword","Combat","Claw"}, "Sword", false, function(v)
+    getgenv().Method = v
+end)
+
+--Misc
+Misc:AddToggle("Infinite Breathing", false, function(t)
+    getgenv().InfBreathing = t
+end)
+
+Misc:AddToggle("Infinite Stamina", false, function(t)
+    getgenv().InfStamina = t
+end)
+
+Misc:AddSlider("WalkSpeed", 1, 16, 50, 1, function(v)
+    getgenv().WalkSpeedValue = v
+end)
+
+Misc:AddSlider("WalkSpeed", 1, 16, 50, 1, function(v)
+    getgenv().JumpPowerValue = v
+end)
+
+Misc:AddToggle("Enable Walk Speed", false, function(t)
+    getgenv().WalksSpeedEnabled = t
+end)
+
+Misc:AddToggle("Enable Jump Power", false, function(t)
+    getgenv().JumpPowerEnabled = t
+end)
+
+Misc:AddButton("Thunder Mode - Human Only",function()
+    game:GetService("ReplicatedStorage").Remotes.thundertang123:FireServer(true)
+end)
+
+Misc:AddButton("Ren Mode - Ren/Human Only",function()
+    game:GetService("ReplicatedStorage").Remotes.heart_ablaze_mode_remote:FireServer(true)
+end)
+
+Misc:AddButton("God Mode - Kamado Only",function()
+    game:GetService("ReplicatedStorage").Remotes.heal_tang123asd:FireServer(true)
+end)
+
+Misc:AddButton("No Sun Burn - Demon Only",function()
+    pcall(function()
+    game:GetService("Players").LocalPlayer.PlayerScripts["Small_Scripts"].Gameplay["Sun_Damage"].Disabled = true
+end)
+end)
+
+Misc:AddButton("Give All Items",function()
+giveallitems()
+end)
+
+Misc:AddButton("No Stun",function()
+nostun()
+end)
+
+--Functions
+
+--Inf Breathing/Stam
+spawn(function()
+    while task.wait() do
+        if getgenv().InfStamina then
+            getrenv()._G.AddStamina("gpthebest", 50)
+        end
+    end
+end)
+
+spawn(function()
+    while task.wait() do
+        if getgenv().InfBreathing then
+            getrenv()._G.AddBreath("gpthebest", 50)
+        end
+    end
+end)
+
+
+
+-- // Kill Aura \\ -- 
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+        if killaura then
+            attack(attackMethods[Method])
+            task.wait(5)
+            end
+        end)
+    end
+end)
+
+
+--WalkSpeed/JumpPower 
+
+spawn(function()
+    while task.wait() do
+        if getgenv().WalksSpeedEnabled then
+            local h = GetHuman()
+            local oldws = h and h.WalkSpeed
+            if oldws then
+                pcall(function()
+                    h.WalkSpeed = getgenv().WalkSpeedValue or oldws or 16
+                    while task.wait() and getgenv().WalksSpeedEnabled do
+                        h.WalkSpeed = getgenv().WalkSpeedValue or oldws or 16
+                    end
+                end)
+                h.WalkSpeed = oldws or 16
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while task.wait() do
+        if getgenv().JumpPowerEnabled then
+            local h = GetHuman()
+            local oldjp = h and h.JumpPower
+            if oldjp then
+                pcall(function()
+                    h.JumpPower = getgenv().JumpPowerValue or oldjp or 50
+                    while task.wait() and getgenv().JumpPowerEnabled do
+                        h.JumpPower = getgenv().JumpPowerValue or oldjp or 50
+                    end
+                end)
+                h.JumpPower = oldjp or 50
+            end
+        end
+    end
+end)
+
+
+
+--No Cooldown Moves
+oldindex = hookmetamethod(game, "__index", function(index, value)
+    if tostring(index) == "LastUsed" and getgenv().NoCdMoves then
+        return 0
+    end
+    return oldindex(index, value)
+end)
+
+end
