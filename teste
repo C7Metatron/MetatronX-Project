@@ -14,9 +14,8 @@ end
 end)
 end)
 
-Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
-Toggle:UpdateToggle("New Title", "New Description")
-print(arg)
+Toggle = Page:CreateToggle("TESTE", "TESTE", function(arg)
+Toggle:UpdateToggle("TESTE", "TESTE1")
 end)
 
 Bind = Page:CreateBind("KeyBind", "F", function(arg)
@@ -29,11 +28,32 @@ TextBox:UpdateBox("New Title")
 print(arg)
 end)
 
-Page:CreateSlider("Slider", 16, 100,function(arg)
-   ValueName = "WS",
-   Callback = function(Value)
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Page:CreateSlider("WalkSpeed", 16, 100,function(arg)
+   end
+end)
+
+Page:CreateSlider("JumpPower", 16, 100,function(arg)
+   end
 end)
 
 Label = Page:CreateLabel("Label")
+
+
 Label:UpdateLabel("🥋 Metatron On Top 👑")
+
+Button = Page:CreateButton("Animation", "Zombie", function()
+CreateNotification("Title", "Description", function(value)
+	local Animate = plr.Character.Animate
+	Animate.Disabled = true
+	StopAnim()
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=3489171152"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=3489171152"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=3489174223"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=3489173414"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
+	plr.Character.Humanoid:ChangeState(3)
+	Animate.Disabled = false
+end)
+end)
