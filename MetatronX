@@ -1,3 +1,59 @@
-# 🥋MetatronX-Project 👑
+--- 🥋MetatronX-Project 👑
 
-Um Pequeno Projeto Sendo Criado Por Um Brasileiro Por Diversão E Aprendizagem
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/C7Metatron/UI-Librarys/main/Vanis%20Library'))()
+local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/C7Metatron/MetatronX-Project/main/NotificationUI"))()
+function notify(fuckyou,title,description,icon,color)
+    notif:message {
+        Title = fuckyou.." | <font color='rgb(".. color ..")'>"..title.."</font>",
+        Description = description,
+        Icon = icon
+    }
+end
+notify("MetatronX Hub","Initiating","Loading MetatronX Hub!",11310622169,"255, 100, 100")
+local Window = library:CreateWindow("MetatronX Hub 👑", "V1", 10044538000)
+local Tab = Window:CreateTab("Scripts")
+local Page = Tab:CreateFrame("Page 1")
+
+Button = Page:CreateButton("Button", "Description", function()
+CreateNotification("Title", "Description", function(value)
+if value == true then
+print(true)
+else
+print(false)
+end
+end)
+end)
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+        if killaura then
+            attack(attackMethods[Method])
+            task.wait(2)
+            end
+        end)
+    end
+end)
+
+Toggle = Page:CreateToggle("Toggle", "Description", function(value)
+Toggle:UpdateToggle("New Title", "New Description")
+notify("Killaura Ligado","Initiating","",11310622169,"255, 100, 100")
+getgenv().killaura = value
+end)
+
+Bind = Page:CreateBind("KeyBind", "F", function(arg)
+Bind:UpdateBind("New Title")
+print(arg)
+end)
+
+TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
+TextBox:UpdateBox("New Title")
+print(arg)
+end)
+
+Page:CreateSlider("Slider", 16, 500,function(arg)
+   print(arg)
+end)
+
+Label = Page:CreateLabel("Label")
+Label:UpdateLabel("🥋 Metatron On Top 👑")
